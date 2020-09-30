@@ -1,0 +1,17 @@
+--------------------------------------------------------------------------------
+Processing file 'model.py'
+ outputting to 'model.py'
+--------------------------------------------------------------------------------
+
+'model.py' Line 223
+--------------------------------------------------------------------------------
+
+Added keyword 'concat_dim' to reordered function 'tf.concat'
+Added keyword 'values' to reordered function 'tf.concat'
+
+    Old:         x_c_code = tf.concat(3, [x_code, c_code])
+                                                           
+    New:         x_c_code = tf.concat(axis=3, values=[x_code, c_code])
+                                      ~~~~~   ~~~~~~~                  
+
+

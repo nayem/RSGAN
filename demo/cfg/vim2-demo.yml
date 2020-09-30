@@ -1,0 +1,15 @@
+CONFIG_NAME: 'stageI'
+
+DATASET_NAME: 'vim2'
+GPU_ID: 2
+Z_DIM: 100
+
+TEST:
+    PRETRAINED_MODEL: '/share/jproject/fg508/naha/StackGAN/ckt_logs/vim2/stageII_2017_04_02_10_07_02/model_358000.ckpt'
+    BATCH_SIZE: 64
+    NUM_COPY: 8
+
+GAN:
+    EMBEDDING_DIM: 128
+    DF_DIM: 64
+    GF_DIM: 128

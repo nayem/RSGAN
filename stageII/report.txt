@@ -1,0 +1,322 @@
+--------------------------------------------------------------------------------
+Processing file 'trainer.py'
+ outputting to 'trainer.py'
+--------------------------------------------------------------------------------
+
+'trainer.py' Line 662
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.all_variables' to 'tf.global_variables'
+
+    Old:                     saver = tf.train.Saver(tf.all_variables())
+                                                    ~~~~~~~~~~~~~~~~    
+    New:                     saver = tf.train.Saver(tf.global_variables())
+                                                    ~~~~~~~~~~~~~~~~~~~    
+
+'trainer.py' Line 266
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.scalar_summary' to 'tf.summary.scalar'
+
+    Old:                 all_sum['g'].append(tf.scalar_summary(k, v))
+                                             ~~~~~~~~~~~~~~~~~        
+    New:                 all_sum['g'].append(tf.summary.scalar(k, v))
+                                             ~~~~~~~~~~~~~~~~~        
+
+'trainer.py' Line 268
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.scalar_summary' to 'tf.summary.scalar'
+
+    Old:                 all_sum['d'].append(tf.scalar_summary(k, v))
+                                             ~~~~~~~~~~~~~~~~~        
+    New:                 all_sum['d'].append(tf.summary.scalar(k, v))
+                                             ~~~~~~~~~~~~~~~~~        
+
+'trainer.py' Line 270
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.scalar_summary' to 'tf.summary.scalar'
+
+    Old:                 all_sum['hr_g'].append(tf.scalar_summary(k, v))
+                                                ~~~~~~~~~~~~~~~~~        
+    New:                 all_sum['hr_g'].append(tf.summary.scalar(k, v))
+                                                ~~~~~~~~~~~~~~~~~        
+
+'trainer.py' Line 272
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.scalar_summary' to 'tf.summary.scalar'
+
+    Old:                 all_sum['hr_d'].append(tf.scalar_summary(k, v))
+                                                ~~~~~~~~~~~~~~~~~        
+    New:                 all_sum['hr_d'].append(tf.summary.scalar(k, v))
+                                                ~~~~~~~~~~~~~~~~~        
+
+'trainer.py' Line 274
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.histogram_summary' to 'tf.summary.histogram'
+
+    Old:                 all_sum['hist'].append(tf.histogram_summary(k, v))
+                                                ~~~~~~~~~~~~~~~~~~~~        
+    New:                 all_sum['hist'].append(tf.summary.histogram(k, v))
+                                                ~~~~~~~~~~~~~~~~~~~~        
+
+'trainer.py' Line 276
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.merge_summary' to 'tf.summary.merge'
+
+    Old:         self.g_sum = tf.merge_summary(all_sum['g'])
+                              ~~~~~~~~~~~~~~~~               
+    New:         self.g_sum = tf.summary.merge(all_sum['g'])
+                              ~~~~~~~~~~~~~~~~               
+
+'trainer.py' Line 277
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.merge_summary' to 'tf.summary.merge'
+
+    Old:         self.d_sum = tf.merge_summary(all_sum['d'])
+                              ~~~~~~~~~~~~~~~~               
+    New:         self.d_sum = tf.summary.merge(all_sum['d'])
+                              ~~~~~~~~~~~~~~~~               
+
+'trainer.py' Line 278
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.merge_summary' to 'tf.summary.merge'
+
+    Old:         self.hr_g_sum = tf.merge_summary(all_sum['hr_g'])
+                                 ~~~~~~~~~~~~~~~~                  
+    New:         self.hr_g_sum = tf.summary.merge(all_sum['hr_g'])
+                                 ~~~~~~~~~~~~~~~~                  
+
+'trainer.py' Line 279
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.merge_summary' to 'tf.summary.merge'
+
+    Old:         self.hr_d_sum = tf.merge_summary(all_sum['hr_d'])
+                                 ~~~~~~~~~~~~~~~~                  
+    New:         self.hr_d_sum = tf.summary.merge(all_sum['hr_d'])
+                                 ~~~~~~~~~~~~~~~~                  
+
+'trainer.py' Line 280
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.merge_summary' to 'tf.summary.merge'
+
+    Old:         self.hist_sum = tf.merge_summary(all_sum['hist'])
+                                 ~~~~~~~~~~~~~~~~                  
+    New:         self.hist_sum = tf.summary.merge(all_sum['hist'])
+                                 ~~~~~~~~~~~~~~~~                  
+
+'trainer.py' Line 161
+--------------------------------------------------------------------------------
+
+Added keyword 'concat_dim' to reordered function 'tf.concat'
+Added keyword 'values' to reordered function 'tf.concat'
+
+    Old:             self.fake_images = self.model.get_generator(tf.concat(1, [c, z]))
+                                                                                       
+    New:             self.fake_images = self.model.get_generator(tf.concat(axis=1, values=[c, z]))
+                                                                           ~~~~~   ~~~~~~~         
+
+'trainer.py' Line 290
+--------------------------------------------------------------------------------
+
+Added keyword 'concat_dim' to reordered function 'tf.concat'
+Added keyword 'values' to reordered function 'tf.concat'
+
+    Old:             stacked_img.append(tf.concat(1, row_img))
+                                                               
+    New:             stacked_img.append(tf.concat(axis=1, values=row_img))
+                                                  ~~~~~   ~~~~~~~          
+
+'trainer.py' Line 291
+--------------------------------------------------------------------------------
+
+Added keyword 'concat_dim' to reordered function 'tf.concat'
+Added keyword 'values' to reordered function 'tf.concat'
+
+    Old:         imgs = tf.expand_dims(tf.concat(0, stacked_img), 0)
+                                                                     
+    New:         imgs = tf.expand_dims(tf.concat(axis=0, values=stacked_img), 0)
+                                                 ~~~~~   ~~~~~~~                 
+
+'trainer.py' Line 292
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.image_summary' to 'tf.summary.image'
+
+    Old:         current_img_summary = tf.image_summary(filename, imgs)
+                                       ~~~~~~~~~~~~~~~~                 
+    New:         current_img_summary = tf.summary.image(filename, imgs)
+                                       ~~~~~~~~~~~~~~~~                 
+
+'trainer.py' Line 304
+--------------------------------------------------------------------------------
+
+Added keyword 'concat_dim' to reordered function 'tf.concat'
+Added keyword 'values' to reordered function 'tf.concat'
+
+    Old:         self.superimages = tf.concat(0, [superimage_train, superimage_test])
+                                                                                      
+    New:         self.superimages = tf.concat(axis=0, values=[superimage_train, superimage_test])
+                                              ~~~~~   ~~~~~~~                                     
+
+'trainer.py' Line 305
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.merge_summary' to 'tf.summary.merge'
+
+    Old:         self.image_summary = tf.merge_summary([fake_sum_train, fake_sum_test])
+                                      ~~~~~~~~~~~~~~~~                                  
+    New:         self.image_summary = tf.summary.merge([fake_sum_train, fake_sum_test])
+                                      ~~~~~~~~~~~~~~~~                                  
+
+'trainer.py' Line 185
+--------------------------------------------------------------------------------
+
+Added keyword 'logits' to reordered function 'tf.nn.sigmoid_cross_entropy_with_logits'
+
+    Old:             tf.nn.sigmoid_cross_entropy_with_logits(real_logit,
+                                                                         
+    New:             tf.nn.sigmoid_cross_entropy_with_logits(logits=real_logit,
+                                                             ~~~~~~~            
+
+'trainer.py' Line 186
+--------------------------------------------------------------------------------
+
+Added keyword 'labels' to reordered function 'tf.nn.sigmoid_cross_entropy_with_logits'
+
+    Old:                                                     tf.ones_like(real_logit))
+                                                                                       
+    New:                                                     labels=tf.ones_like(real_logit))
+                                                             ~~~~~~~                          
+
+'trainer.py' Line 316
+--------------------------------------------------------------------------------
+
+Added keyword 'concat_dim' to reordered function 'tf.concat'
+Added keyword 'values' to reordered function 'tf.concat'
+
+    Old:             tf.concat(0, [hr_superimage_train, hr_superimage_test])
+                                                                             
+    New:             tf.concat(axis=0, values=[hr_superimage_train, hr_superimage_test])
+                               ~~~~~   ~~~~~~~                                           
+
+'trainer.py' Line 189
+--------------------------------------------------------------------------------
+
+Added keyword 'logits' to reordered function 'tf.nn.sigmoid_cross_entropy_with_logits'
+
+    Old:             tf.nn.sigmoid_cross_entropy_with_logits(wrong_logit,
+                                                                          
+    New:             tf.nn.sigmoid_cross_entropy_with_logits(logits=wrong_logit,
+                                                             ~~~~~~~             
+
+'trainer.py' Line 190
+--------------------------------------------------------------------------------
+
+Added keyword 'labels' to reordered function 'tf.nn.sigmoid_cross_entropy_with_logits'
+
+    Old:                                                     tf.zeros_like(wrong_logit))
+                                                                                         
+    New:                                                     labels=tf.zeros_like(wrong_logit))
+                                                             ~~~~~~~                            
+
+'trainer.py' Line 193
+--------------------------------------------------------------------------------
+
+Added keyword 'logits' to reordered function 'tf.nn.sigmoid_cross_entropy_with_logits'
+
+    Old:             tf.nn.sigmoid_cross_entropy_with_logits(fake_logit,
+                                                                         
+    New:             tf.nn.sigmoid_cross_entropy_with_logits(logits=fake_logit,
+                                                             ~~~~~~~            
+
+'trainer.py' Line 194
+--------------------------------------------------------------------------------
+
+Added keyword 'labels' to reordered function 'tf.nn.sigmoid_cross_entropy_with_logits'
+
+    Old:                                                     tf.zeros_like(fake_logit))
+                                                                                        
+    New:                                                     labels=tf.zeros_like(fake_logit))
+                                                             ~~~~~~~                           
+
+'trainer.py' Line 464
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.all_variables' to 'tf.global_variables'
+
+    Old:                 saver = tf.train.Saver(tf.all_variables(),
+                                                ~~~~~~~~~~~~~~~~    
+    New:                 saver = tf.train.Saver(tf.global_variables(),
+                                                ~~~~~~~~~~~~~~~~~~~    
+
+'trainer.py' Line 318
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.merge_summary' to 'tf.summary.merge'
+
+    Old:             tf.merge_summary([hr_fake_sum_train, hr_fake_sum_test])
+                     ~~~~~~~~~~~~~~~~                                        
+    New:             tf.summary.merge([hr_fake_sum_train, hr_fake_sum_test])
+                     ~~~~~~~~~~~~~~~~                                        
+
+'trainer.py' Line 468
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.train.SummaryWriter' to 'tf.summary.FileWriter'
+
+    Old:                 summary_writer = tf.train.SummaryWriter(self.log_dir,
+                                          ~~~~~~~~~~~~~~~~~~~~~~               
+    New:                 summary_writer = tf.summary.FileWriter(self.log_dir,
+                                          ~~~~~~~~~~~~~~~~~~~~~               
+
+'trainer.py' Line 213
+--------------------------------------------------------------------------------
+
+Added keyword 'logits' to reordered function 'tf.nn.sigmoid_cross_entropy_with_logits'
+
+    Old:             tf.nn.sigmoid_cross_entropy_with_logits(fake_logit,
+                                                                         
+    New:             tf.nn.sigmoid_cross_entropy_with_logits(logits=fake_logit,
+                                                             ~~~~~~~            
+
+'trainer.py' Line 214
+--------------------------------------------------------------------------------
+
+Added keyword 'labels' to reordered function 'tf.nn.sigmoid_cross_entropy_with_logits'
+
+    Old:                                                     tf.ones_like(fake_logit))
+                                                                                       
+    New:                                                     labels=tf.ones_like(fake_logit))
+                                                             ~~~~~~~                          
+
+'trainer.py' Line 117
+--------------------------------------------------------------------------------
+
+Added keyword 'concat_dim' to reordered function 'tf.concat'
+Added keyword 'values' to reordered function 'tf.concat'
+
+    Old:                 fake_images = self.model.get_generator(tf.concat(1, [c, z]))
+                                                                                      
+    New:                 fake_images = self.model.get_generator(tf.concat(axis=1, values=[c, z]))
+                                                                          ~~~~~   ~~~~~~~         
+
+'trainer.py' Line 382
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.initialize_all_variables' to 'tf.global_variables_initializer'
+
+    Old:         sess.run(tf.initialize_all_variables())
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+    New:         sess.run(tf.global_variables_initializer())
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+
+
